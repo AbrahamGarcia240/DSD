@@ -1,8 +1,7 @@
 #include "fecha.h"
 #include <iostream>
 using namespace std;
-Fecha::Fecha(int dd, 
-int mm, int aaaa)
+Fecha::Fecha(int dd, int mm, int aaaa)
 {
 mes = mm;
 dia = dd;

@@ -4,43 +4,44 @@
 
 class Fecha {
 private:
-     int dia;
-     int mes;
-     int anio;
+     long double dia;
+     long double mes;
+     long double anio;
+     char miau[1000000];
 public:
-    Fecha(int = 3, int = 4, int = 2014);
-    void inicializaFecha(int, int, int);
+    Fecha(long double = 3, long double = 4, long double = 2014);
+    void inicializaFecha(long double, long double, long double);
     void muestraFecha();
     int masVieja(Fecha fecha1, Fecha fecha2);
     int masVieja(Fecha* fecha1, Fecha* fecha2);
-    int getDia();
-    int getMes();
-    int getAnio();
+    long double getDia();
+    long double getMes();
+    long double getAnio();
  };
 
-Fecha::Fecha(int dd, int mm, int aaaa) {
+Fecha::Fecha(long double dd, long double mm, long double aaaa) {
     mes = mm;
     dia = dd;
     anio = aaaa;
 }
 
-void Fecha::inicializaFecha(int dd, int mm, int aaaa) {
+void Fecha::inicializaFecha(long double dd, long double mm, long double aaaa) {
     anio = aaaa;
     mes = mm;
     dia = dd;   
     return;
 }
 
-int Fecha::getDia(){
+long double Fecha::getDia(){
     return this->dia;
 }
 
 
-int Fecha::getMes(){
+long double Fecha::getMes(){
     return this->mes;
 }
 
-int Fecha::getAnio(){
+long double Fecha::getAnio(){
     return this->anio;
 }
  
@@ -124,7 +125,7 @@ int main() {
         //cout <<<<endl;
         a.inicializaFecha(22,12,(1600 + (rand() % (int)(2018 - 1600 + 1))));
         b.inicializaFecha(22,12,(1600 + (rand() % (int)(2018 - 1600 + 1))));
-        //cout<<sizeof(a)<<endl;
+        cout<<sizeof(a)<<endl;
 
         timespec tstart={0,0}, tend={0,0};
         clock_gettime(CLOCK_MONOTONIC, &tstart);
@@ -145,31 +146,4 @@ int main() {
         cout<<"Seconds to run the code with pointer: "<<seconds<<endl;
     }
     
-    
-   /*
-    b.inicializaFecha(22, 9 , 1973);
-    a.muestraFecha();
-    b.muestraFecha();
-    //c.muestraFecha();
-
-
-
-    struct timespec tstart={0,0}, tend={0,0};
-    clock_gettime(CLOCK_MONOTONIC, &tstart);
-
-    cout<<"La fecha: "<<a.masVieja(c,b)<<endl;
-    
-    clock_gettime(CLOCK_MONOTONIC, &tend);
-    float seconds=((float)tend.tv_sec+1.0e-9*tend.tv_nsec)-((float)tstart.tv_sec+1.0e-9*tstart.tv_nsec);
-    cout<<"Seconds to run the code without pointer: "<<seconds<<endl;
-
-     tstart={0,0}, tend={0,0};
-    clock_gettime(CLOCK_MONOTONIC, &tstart);
-
-    cout<<"La fecha: "<<a.masVieja(&c,&b)<<endl;
-    
-    clock_gettime(CLOCK_MONOTONIC, &tend);
-    seconds=((float)tend.tv_sec+1.0e-9*tend.tv_nsec)-((float)tstart.tv_sec+1.0e-9*tstart.tv_nsec);
-    cout<<"Seconds to run the code with pointer: "<<seconds<<endl;
-    */
 }
