@@ -9,7 +9,13 @@ class NumerosRand
 	public:
 		NumerosRand(unsigned int num);
 		void inicializaNumerosRand(void);
+		~NumerosRand();
 };
+
+NumerosRand::~NumerosRand(){
+	delete[] arreglo;
+	delete &numeroElementos;
+}
 NumerosRand::NumerosRand(unsigned int num)
 {
 	numeroElementos = num;
@@ -30,6 +36,7 @@ void pruebaClase(){
 	NumerosRand tmp(capacidad);
 	tmp.inicializaNumerosRand();
 	sleep(7);
+	delete &tmp;
 }
 int main()
 {
