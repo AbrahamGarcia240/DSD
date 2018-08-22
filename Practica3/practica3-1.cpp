@@ -3,18 +3,19 @@
 using namespace std;
 class NumerosRand
 {
-	private:
-		int *arreglo;
-		unsigned int numeroElementos;
-	public:
-		NumerosRand(unsigned int num);
-		void inicializaNumerosRand(void);
-		~NumerosRand();
+private:
+	int *arreglo;
+	unsigned int numeroElementos;
+public:
+	NumerosRand(unsigned int num);
+	void inicializaNumerosRand(void);
+	~NumerosRand();
 };
+
 
 NumerosRand::~NumerosRand(){
 	delete[] arreglo;
-	delete &numeroElementos;
+	//delete &numeroElementos;
 }
 NumerosRand::NumerosRand(unsigned int num)
 {
@@ -26,7 +27,7 @@ void NumerosRand::inicializaNumerosRand()
 {
 	unsigned int i;
 	for(i = 0; i < numeroElementos; i++)
-	arreglo[i] = rand();
+		arreglo[i] = rand();
 	return;
 }
 void pruebaClase(){
@@ -36,7 +37,7 @@ void pruebaClase(){
 	NumerosRand tmp(capacidad);
 	tmp.inicializaNumerosRand();
 	sleep(7);
-	delete &tmp;
+	
 }
 int main()
 {
