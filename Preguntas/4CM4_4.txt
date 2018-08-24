@@ -1,0 +1,25 @@
+Son características de los sistemas distribuidos:
+Concurrentes, con reloj global y fallas independientes
+Heterogeneos, seguros, escalables y cuentan con manejo de errores
+Programadas en el mismo lenguaje
+Requieren de un sistema operativo en común
+No son ejemplos de sistemas distribuidos:
+Paint
+Videojuegos online
+Redes sociales
+Internet
+Son desafios de los sistemas distribuidos:
+Heterogeneos, seguros, escalables y cuentan con manejo de errores
+Ser concurrentes, centralizados y tener manejo de fallas independientes
+Ser programados con el mismo lenguaje
+Funcionar sin ninguna clase de comunicación
+La transparencia se refiere a:
+Hacer creer al usuario que no hay separación alguna de componentes
+El código se oculta y es innaccesible 
+El sistema desaparece de repente
+El usuario nota la separación de componentes sin problema
+La escabilidad se refiere a:
+Que el sistema funcionará en escalas diferentes sin problema
+Ser concurrentes, centralizados y tener manejo de fallas independientes
+Ser programados con el mismo lenguaje
+A que funcionará en edificios altos
