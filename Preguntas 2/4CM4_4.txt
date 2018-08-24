@@ -1,0 +1,25 @@
+Esta es una capa del middleware:
+RMI y RPC
+UDP y TCP
+CORBA Y Java RMI
+Lenguajes de programación
+En comunicación síncrona las operaciones recibe y envía son:
+Ambas bloqueantes
+Recibe bloqueante y envía no bloqueante
+Ambas no bloqueantes
+Ambas pueden ser bloqueantes y/o no bloqueantes
+En la comunicación de datagramas UDP el las operaciones de envío son de tipo:
+Envío, no bloqueante y recibe, bloqueante
+Envío, bloqueante y recibe, no bloqueante
+Ambas bloqueantes
+Ambas no bloqueantes
+Son algunas características de la comunicación entre procesos:
+Ordenación, fiabilidad y destinos de los mensajes
+UDP y TCP
+Envío, no bloqueante y recibe, bloqueante
+Computador y usuario
+La fiabilidad define fiable la comunicación entreprocesos en los términos de:
+Validez e integridad
+Seguridad y autenticidad
+Integridad y permanencia
+Validez y seguridad
