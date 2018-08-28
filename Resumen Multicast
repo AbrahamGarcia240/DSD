@@ -1,0 +1,42 @@
+Parwise exchange
+
+La comparacion por pares no es la mejor
+
+Multicast: envía un mensaje a un proceso de cada miembro del grupo de procesos
+
+Tolerancia de falla basado en replicas, la respuesta de cliente para todos los miembros en una operacion identica, cuando algun miembro falla el sistema puede seguir funcionando.
+
+Los multicast pueden usarse por servidores y clientes en servicios disponibles en la manera que se registraron
+
+Los datos se duplican para incrementar el desempeño del servicio, el dato cambia con el tiempo y el nuevo valor es multicast para los procesos que se administran
+
+Propagacion de notificaion de eventos 
+
+El multicast puede usarse para notificar que ocurre en los procesos
+
+IP MULTICAST
+
+Esta implementado en protocolo IP permite al emisor transmitir un paquete IP a varios equipos del grupo
+
+Un miembro del grupo permite a la computadora recibir el paquete IP enviado del grupo, los miembros del grupo multicast son dinamicos y permiten unirse o dejar en cualquier momento cualquier numero de grupos,
+es posible enviar datagramas en un grupo multicast sin ser miembros
+
+A nivel programacion el IP multicast esta disponivle via UDD
+
+ROUTER MULTICAST
+
+Los paquetes Ip pueden ser multicast en una red local en un internet mas ancho
+Puede usarse en routers multicast con simples datagramas a router de otras redes de donde ellos son miembros de esa red,
+Para limitar la propagacion se especifica el numero de routers permitidos a pasar por el TTL (Time To Live)
+
+ASIGNACION DE DIRECCION MULTICAST
+
+Las direcciones clase D estan reservadas para el trafico multicast en le rango 224.0.0.0. a 239.255.255.255 manejado por la IANA, esto se revisa anualmente con el documento RCP 3171 que define la particion de las direcciones en varios numeros de bloque 
+
+Bloque de control de red local 224.0.0.0 a 224.0.0.225
+Bloque de control de Internet 224.0.2.0 a 224.0.1.225
+Bloque de control ad hoc 224.0.2.0 a 224.0.255.0 
+Bloque de ambito administrativo 239.0.0.0 a 239.255.255.255 usado para implementar un control en el trafico multicast 
+Direcciones reservadas 224.0.1.1 protocolo NTP
+Del rango 224.0.6.0 al 224.0.6.127 para ISIS Proyect
+
