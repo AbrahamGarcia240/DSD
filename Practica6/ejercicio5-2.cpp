@@ -2,9 +2,12 @@
 #include <vector>
 #include<cstdlib>
 #include<time.h>
+#include <iomanip>
+
+
 using namespace std;
 
-//double randomvalue();
+double randomvalue();
 
 class Coordenada {
 	private:
@@ -33,7 +36,7 @@ Coordenada obtieneInfDer();
 
 class PoligonoIrreg{
 	private:
-		vector <Coordenada> ves=vector <Coordenada>(15);
+		vector <Coordenada> ves;
 	public:
 		PoligonoIrreg();
 		void anadeVertice(double x, double y);
@@ -45,32 +48,30 @@ PoligonoIrreg::PoligonoIrreg(){
 }
 
 void  PoligonoIrreg::anadeVertice(double x, double y){
-	if(ves.capacity()>ves.size()+1){
+	//if(ves.capacity()>ves.size()+1){
 		ves.push_back(Coordenada(x,y));
-	}
-	else{
-		ves.reserve(ves.size()+20);
+	//}
+	//else{
+	//	ves.reserve(ves.size()+20);
 		ves.push_back(Coordenada(x,y));
-	}
+	//}
 }
 
 void PoligonoIrreg::imprimeVertices(){
-
-	
-	for(Coordenada& corde: ves){
+	vector<Coordenada>::reverse_iterator ir;
+	for (ir = ves.rbegin( ); ir != ves.rend( ); ir++){
+		cout<<(*ir).obtenerX()<<" : "<<(*ir).obtenerY()<<endl;
+	}
+	/*for(Coordenada& corde: ves){
 		if(corde.obtenerX()!=0 && corde.obtenerY()!=0)
 		cout<<"x: "<<corde.obtenerX()<<" Y: "<<corde.obtenerY()<<endl;
-	}
+	}*/
 }
 
-double fRand(double fMin, double fMax)
-{
-    double f = (double)rand() / RAND_MAX;
-    return fMin + f * (fMax - fMin);
-}
 
 int main( int argc, char ** argv) {
-
+  std::cout << std::fixed;
+ std::cout << std::setprecision(3);
 int N=0, m;
 
 Rectangulo rectangulo1(2,3,5,1);
@@ -83,7 +84,6 @@ cout << "Calculando el área de un rectángulo dadas sus coordenadas en un plano
 
 rectangulo1.imprimeEsq();
 */
-
 
 
 srand(time(NULL));
@@ -115,12 +115,11 @@ prueba.imprimeVertices();*/
  m=N;
 
  for(int f=0; f<m; f++){
- 	//cout<<"entre"<<endl;
- 	ancho=rafRand( -100,  100);
- 	alto=rafRand( -100,  100);
- 	cout<<ancho<<endl;
- 	//nvertices.anadeVertice(static_cast<double> (ancho) ,static_cast<double> (alto));
-cout<<ancho<<" "<<alto<<endl;
+ 	//cout<<ancho<<" "<<alto<<endl;
+ 	ancho=randomvalue();
+ 	alto=randomvalue();
+ 	nvertices.anadeVertice(static_cast<double> (ancho) ,static_cast<double> (alto));
+//cout<<ancho<<" "<<alto<<endl;
  }
 nvertices.imprimeVertices();
 
@@ -128,6 +127,10 @@ nvertices.imprimeVertices();
 
 }
 
+double randomvalue(){
+return ((double)(rand() % 101)*(rand()%2 ? 1 : 1 -1))+(((double)(rand()%101))/100);
+
+}
 Coordenada::Coordenada(double xx, double yy) : x(xx), y(yy) { }
 	
 	double Coordenada::obtenerX() {
