@@ -4,7 +4,7 @@
 #include<time.h>
 using namespace std;
 
-//double randomvalue();
+double randomvalue();
 
 class Coordenada {
 	private:
@@ -110,8 +110,8 @@ prueba.imprimeVertices();*/
 
  for(int f=0; f<m; f++){
  	//cout<<ancho<<" "<<alto<<endl;
- 	ancho=static_cast <float>(rand())/static_cast <float>(RAND_MAX);
- 	alto=static_cast <double>(1+rand()%(101-1))/static_cast <double>(1.0);
+ 	ancho=randomvalue();
+ 	alto=randomvalue();
  	//nvertices.anadeVertice(static_cast<double> (ancho) ,static_cast<double> (alto));
 cout<<ancho<<" "<<alto<<endl;
  }
@@ -121,6 +121,10 @@ nvertices.imprimeVertices();
 
 }
 
+double randomvalue(){
+return ((double)(rand() % 101)*(rand()%2 ? 1 : 1 -1))+(((double)(rand()%101))/100);
+
+}
 Coordenada::Coordenada(double xx, double yy) : x(xx), y(yy) { }
 	
 	double Coordenada::obtenerX() {
