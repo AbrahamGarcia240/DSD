@@ -86,20 +86,26 @@ int main( ) {
 
 //cout << "El área del rectángulo es = " << ancho*alto << endl;
 
-
-PoligonoIrreg prueba;
-register int n=9000000;
+std::vector <PoligonoIrreg> prueba;
+register int n=2000;
+register int j;
 register int i;
  srand(time(NULL));
-for (i = n; i!=0; i--)
- {
- 	prueba.anadeVertice(1+rand()%(101-1),1+rand()%(101-1));
- 	//prueba.imprimeVeces();
- } 
+
+for(j=0; j<10000; j++){
+	prueba.push_back(PoligonoIrreg());
+	for (i = n; i!=0; i--)
+	 {
+
+	 	prueba[j].anadeVertice(1+rand()%(101-1),1+rand()%(101-1));
+	 	//prueba.imprimeVeces();
+	 } 
+}
 
 
-//prueba.imprimeVertices();
-//prueba.imprimeVeces();
+
+//prueba[1].imprimeVertices();
+prueba[0].imprimeVeces();
 return 0;
 
 

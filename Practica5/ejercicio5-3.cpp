@@ -61,8 +61,9 @@ void PoligonoIrreg::ampliaTamano(int n){
 void  PoligonoIrreg::anadeVertice(int n, double x, double y){
 	miau++;
 
-	
-	ves.insert(ves.begin()+n, Coordenada(x,y));
+	//cout<<miau<<endl;
+	ves[n]=Coordenada(x,y);
+	//ves.insert(ves.begin()+n, Coordenada(x,y));
 	//cout<<x<<endl;
 	
 }
@@ -95,25 +96,28 @@ int main( ) {
 
 //cout << "El área del rectángulo es = " << ancho*alto << endl;
 
-
-PoligonoIrreg prueba;
-register int n=9000000;
+std::vector <PoligonoIrreg> prueba(10000);
+register int n=2000;
 register int i;
-prueba.ampliaTamano(n);
+register int j;
+
 
  srand(time(NULL));
-for (i = 0; i<=n; i++)
- {
- 	//cout<<1+rand()%(101-1)<<endl;
 
- 	prueba.anadeVertice(i,1+rand()%(101-1),1+rand()%(101-1));
- 	//prueba.imprimeVertices();
- 	//prueba.imprimeVeces();
- } 
+for(j=1; j<=10000; j++){
+	prueba[j].ampliaTamano(n);
+	for (i = 1; i<=n; i++)
+	 {
+	 	prueba[j].anadeVertice(i,1+rand()%(101-1),1+rand()%(101-1));
+	 	//prueba.imprimeVeces();
+	 } 
+}
+
+
 
 
 //prueba.imprimeVertices();
-//prueba.imprimeVeces();
+prueba[1].imprimeVeces();
 return 0;
 
 
