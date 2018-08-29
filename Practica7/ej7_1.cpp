@@ -5,11 +5,11 @@ using namespace std;
 int main(){
 
 int n;
-cin >> n;
-
 string line ("");
-getline(cin.ignore(INT_MAX), line);
+cin >> n;
+getline(cin, line);
 
 cout<<n<<" "<<line<<endl;
+
 return 0;
 }
