@@ -5,7 +5,7 @@
 #include <cmath>
 
 using namespace std;
-
+double randomvalue();
 class Coordenada {
 	private:
 	double x;
@@ -66,8 +66,11 @@ void  PoligonoIrreg::anadeVertice(double x, double y){
 }
 
 void PoligonoIrreg::ordenaA(){
+	
+
 	for(Coordenada& corde:ves){
 		mg.push_back(corde.getMagnitud());
+
 	}
 	
 	cout<<"Sin ordenar : ";
@@ -78,8 +81,15 @@ void PoligonoIrreg::ordenaA(){
 	std::sort (mg.begin(), mg.end());
 
 	cout << "Ordenados";
-  	for (vector<double>::iterator it=mg.begin(); it!=mg.end(); ++it)
-    	cout << ' ' << *it;
+	int i=0;
+  	for (vector<double>::iterator it=mg.begin(); it!=mg.end(); ++it){
+  		cout<<"x: "<<ves[i].obtenerX()<<" Y: "<<ves[i].obtenerY();
+    	cout << ' ' << *it<<endl;
+    	i++;
+  	}
+    	
+
+
   	cout << '\n';
 }
 
@@ -99,18 +109,17 @@ int main( ) {
 
 
 PoligonoIrreg prueba;
-register int n=6;
+register int n=200;
 register int i;
 srand(time(NULL));
 for (i = n; i!=0; i--)
  {
- 	prueba.anadeVertice(1+rand()%(101-1),1+rand()%(101-1));
+ 	prueba.anadeVertice(randomvalue(),randomvalue());
  	//prueba.imprimeVeces();
  } 
 
 
 prueba.imprimeVertices();
-prueba.imprimeVeces();
 prueba.ordenaA();
 return 0;
 
@@ -157,4 +166,10 @@ Coordenada Rectangulo::obtieneSupIzq() {
 
 Coordenada Rectangulo::obtieneInfDer() {
 	return inferiorDer;
+}
+
+double randomvalue(){
+return (double)(1+rand()%(999999-1))/(double)1000;
+//return ((double)(rand() % 101)*(rand()%2 ? 1 : 1 -1))+(((double)(rand()%101))/100);
+
 }

@@ -53,7 +53,7 @@ void  PoligonoIrreg::anadeVertice(double x, double y){
 	//}
 	//else{
 	//	ves.reserve(ves.size()+20);
-		ves.push_back(Coordenada(x,y));
+		//ves.push_back(Coordenada(x,y));
 	//}
 }
 
@@ -128,7 +128,8 @@ nvertices.imprimeVertices();
 }
 
 double randomvalue(){
-return ((double)(rand() % 101)*(rand()%2 ? 1 : 1 -1))+(((double)(rand()%101))/100);
+return (double)(1+rand()%(999999-1))/(double)1000;
+//return ((double)(rand() % 101)*(rand()%2 ? 1 : 1 -1))+(((double)(rand()%101))/100);
 
 }
 Coordenada::Coordenada(double xx, double yy) : x(xx), y(yy) { }
