@@ -13,7 +13,7 @@ int main(){
 	srand(time(NULL));
 	int i=1;
 	int k=1;
-	for(i=1;i<=1000000;i++){
+	for(i=1;i<=175760;i++){
 		//cout<<i<<endl;
 		//cout<<endl;
 		for(int j=0;j<3;j++){

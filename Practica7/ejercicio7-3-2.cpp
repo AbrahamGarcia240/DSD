@@ -11,7 +11,7 @@ int main(){
 	srand(time(NULL));
 	int i=1;
 	int k=1;
-	for(i=1;i<=1000000;i++){
+	for(i=1;i<=1757600;i++){
 		
 		cad.append(string(1,(rand()%25)+65));
 		cad.append(string(1,(rand()%25)+65));
@@ -41,7 +41,7 @@ int main(){
           pos += string("IPN").length();
    }
 	
-
+   	cout<<"El numero de veces que aparece la cadena IPN es:"<<endl;
 	cout<<apariciones<<endl;
 	
 }
