@@ -44,7 +44,7 @@ class Toroide : public Cilindro, public Circulo{
 private: 
 	double Radio, radio;
 public:
-Toroide(double r=1.0, double l=1.0, double Ra=3.0, double ra=1.0): Cilindro(r,l), Circulo(R), Circulo(p){}
+Toroide(double r, double l, double R, double p): Cilindro(r,l), Radio(R), radio(p){}
 double calcval();
 
 };
