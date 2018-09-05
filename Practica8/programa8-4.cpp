@@ -93,20 +93,21 @@ PoligonoReg::PoligonoReg(int v):numVertices(v){
 	register int i;
 
 	//primero obtengo el angulo asociado
-	double angulo=(2*PI)/v;
-	angulo*=360;
-	angulo/=2*PI;
 
-	//cout<<angulo<<endl;
+	double angulo=static_cast<double>(360)/static_cast<double>(v);
+
+    //cout<<angulo<<endl;
 	PoligonoIrreg::anadeVertice(0,1);
 
 	double alfa;
 	for ( i = 1; i < v; i++)
 	{
 		alfa=angulo*i+90;
+		
 		//cout<<"1 :"<<alfa<<endl;
 		alfa=alfa*2*PI;
 		alfa=alfa/360;
+		//cout<<alfa<<endl;
 		//cout<<cos(alfa)<<":"<<sin(alfa)<<endl;
 		PoligonoIrreg::anadeVertice(cos(alfa),sin(alfa));
 	}
@@ -117,15 +118,18 @@ PoligonoReg::PoligonoReg(int v):numVertices(v){
 }
 
 double PoligonoReg::obtieneArea(){
-	register int i;
+	register int i=1;
 	double perimetro=0;
-	for (i = 1; i < numVertices; i++)
-	{
-		perimetro+=sqrt(pow(PoligonoIrreg::ves[i].obtenerX()-PoligonoIrreg::ves[i-1].obtenerX(),2)+pow(PoligonoIrreg::ves[i].obtenerY()-PoligonoIrreg::ves[i-1].obtenerY(),2));
-		
-	}
-
-	return perimetro/2;
+	double apotema=0;
+	//cout<<PoligonoIrreg::ves[i].obtenerX()<<":"<<PoligonoIrreg::ves[i].obtenerY()<<" - "<<PoligonoIrreg::ves[i-1].obtenerX()<<" , "<<PoligonoIrreg::ves[i-1].obtenerY()<<endl;
+		perimetro+=sqrt(pow(PoligonoIrreg::ves[i-1].obtenerX()-PoligonoIrreg::ves[i].obtenerX(),2)+pow(PoligonoIrreg::ves[i-1].obtenerY()-PoligonoIrreg::ves[i].obtenerY(),2));
+	//cout<<"La distancia de un lado es de:";
+			//cout<<perimetro<<endl;
+			apotema=sqrt(1-pow(perimetro/2,2));
+			//cout<<"el apotema es "<<apotema<<endl;
+	perimetro*=PoligonoReg::numVertices;
+	//cout<<perimetro<<endl;
+	return perimetro*apotema/2;
 }
 
 
@@ -135,8 +139,12 @@ int main( ) {
 	cin>>lados;
 	PoligonoReg x(lados);
 	
-	x.imprimeVertices();
-	cout<<x.obtieneArea()<<endl;
+	//x.imprimeVertices();cout.precision(40);
+	  cout.precision(40);
+
+  	cout<<fixed << x.obtieneArea() << " " <<endl;
+
+	//cout<<x.obtieneArea()<<endl;
 /**
 Rectangulo rectangulo1(2,3,5,1);
 
