@@ -130,9 +130,12 @@ double PoligonoReg::obtieneArea(){
 
 
 int main( ) {
+	cout<<"Ingrese el numero de vertices deseados"<<endl;
 	int lados;
 	cin>>lados;
 	PoligonoReg x(lados);
+	
+	x.imprimeVertices();
 	cout<<x.obtieneArea()<<endl;
 /**
 Rectangulo rectangulo1(2,3,5,1);
